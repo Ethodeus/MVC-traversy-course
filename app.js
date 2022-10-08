@@ -28,7 +28,6 @@ app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', '.hbs')
 
 //Session middleware
-
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -36,16 +35,13 @@ app.use(session({
 }))
 
 //Passport middleware
-
 app.use(passport.initialize())
 app.use(passport.session())
 
 //Static folder
-
 app.use(express.static(path.join(__dirname, 'public')))
 
 //Routes
-
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 
