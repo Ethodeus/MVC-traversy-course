@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
+const methodOverride = require('method-override');
 const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
@@ -29,7 +30,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 //Handlebars Helpers
-const { formatDate, stripTags, truncate, editIcon } = require('./helpers/hbs');
+const { formatDate, stripTags, truncate, editIcon, select } = require('./helpers/hbs');
 
 // Handlebars
 app.engine(
@@ -40,6 +41,7 @@ app.engine(
 			stripTags,
 			truncate,
 			editIcon,
+			select,
 		},
 		defaultLayout: 'main',
 		extname: '.hbs',
