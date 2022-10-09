@@ -11,3 +11,7 @@ p {
 .divider {
 	margin: 0 0 20px 0;
 }
+
+.fa-small {
+	font-size: 16px !important;
+}
